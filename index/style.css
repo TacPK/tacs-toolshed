@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url('./shed.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 95vw;
+  height: 95vh;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 90vw;
+  height: 90vh;
+}
+
+.navbar li {
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 10px;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 5em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+}
