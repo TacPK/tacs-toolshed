@@ -45,6 +45,15 @@
   border-bottom: 1px dashed #000;
 }
 
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(7, 3em);
