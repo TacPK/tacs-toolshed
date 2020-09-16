@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <a href="/index/index.html" class="back">BACK</a>
+
+    <div class="container">
+      <div class="header">To Do List</div>
+
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Add item?"
+          id="toDoItem"
+          class="form-control"
+        />
+
+        <button id="add">
+          <span>Add Item</span>
+        </button>
+      </div>
+
+      <div class="error" id="error"></div>
+
+      <div>
+        <ul id="toDoList">
+          <!-- Adding list items through JavaScript -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="todo.js"></script>
+  </body>
+</html>

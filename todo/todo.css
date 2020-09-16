@@ -1,0 +1,87 @@
+:root {
+  --bground: rgba(255, 206, 206, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bground);
+}
+
+/* Back Button */
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  padding: 10px 15px;
+  background-color: #d4d4d4;
+  text-decoration: none;
+  border: solid 2px #000;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+/* To Do App */
+.container {
+  display: block;
+  text-align: center;
+  margin-top: 5em;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 1em;
+  text-shadow: 4px 4px 2px rgb(255, 160, 144);
+}
+
+input {
+  background-color: var(--bground);
+  font-weight: bold;
+}
+
+#add {
+  background-color: var(--bground);
+}
+
+li {
+  list-style-type: none;
+  margin-top: 1em;
+  margin-right: 3em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.success,
+.failure {
+  padding: 5px 5px;
+  border-radius: 1em;
+  margin-left: 10px;
+  margin-right: -5px;
+  color: #0f0;
+  outline: none;
+}
+
+.failure {
+  color: #f00;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#add:active {
+  background-color: rgb(133, 255, 249);
+}
+
+.error {
+  display: none;
+  color: #f00;
+  font-weight: bold;
+  position: relative;
+  margin-top: 1em;
+}
