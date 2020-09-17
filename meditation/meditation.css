@@ -1,0 +1,14 @@
+/* Back Button */
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  padding: 10px 15px;
+  background-color: #d4d4d4;
+  text-decoration: none;
+  border: solid 2px #000;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+}
