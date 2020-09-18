@@ -1,26 +1,46 @@
 // DOM
 const timer = document.querySelector('.timer');
 const startTimer = document.querySelector('.start');
+const pauseTimer = document.querySelector('.pause');
 const stopTimer = document.querySelector('.stop');
+const timerValue = document.querySelector('.timerValue');
+const alarm = new Audio('alarm.wav');
+
+// Minutes to Seconds
+function adjustInput() {
+  let userInput = timerValue.value;
+  let newInput = userInput * 60 + 1;
+  timerValue.value = newInput;
+}
 
 // START
-startTimer.addEventListener('click', (e) => {
-  startTimer.innerText = 'Pause';
+startTimer.addEventListener('click', () => {
+  startTimer.style.display = 'none';
+  timerValue.style.display = 'none';
+  pauseTimer.style.display = 'inline';
   stopTimer.style.display = 'inline';
+  adjustInput();
+  toggleTimer();
+});
+
+// PAUSE
+pauseTimer.addEventListener('click', () => {
+  pauseTimer.innerText = 'Pause';
   toggleTimer();
 });
 
 // STOP
-stopTimer.addEventListener('click', (e) => {
+stopTimer.addEventListener('click', () => {
+  alarm.pause();
+  alarm.currentTime = 0;
   startTimer.innerText = 'Start';
+  timerValue.style.display = 'inline';
+  pauseTimer.style.display = 'none';
+  stopTimer.style.display = 'none';
   toggleTimer(true);
 });
 
-const btn1 = Math.floor(userInput.value * 60);
-
 // Timer Attributes
-let setTime = btn1;
-let timeLeft = btn1;
 let activeTimer = false;
 
 // Toggle Timer
@@ -29,14 +49,14 @@ const toggleTimer = (reset) => {
     stopClock();
   } else {
     if (activeTimer === true) {
-      // pause
+      // Pause
       clearInterval(countdownTimer);
-      startTimer.innerText = 'Play';
+      pauseTimer.innerText = 'Play';
       activeTimer = false;
     } else {
-      // start
+      // Start
       countdownTimer = setInterval(() => {
-        timeLeft--;
+        timerValue.value--;
         displayTime();
       }, 1000);
       activeTimer = true;
@@ -45,27 +65,36 @@ const toggleTimer = (reset) => {
 };
 
 const displayTime = () => {
-  const secondsLeft = timeLeft;
+  const secondsLeft = timerValue.value;
   let result = '';
   const seconds = secondsLeft % 60;
   const minutes = parseInt(secondsLeft / 60) % 60;
   let hours = parseInt(secondsLeft / 3600);
-  // add leading zeroes if it's less than 10
+
   function addZero(time) {
     return time < 10 ? `0${time}` : time;
   }
+
   if (hours > 0) result += `${hours}:`;
   result += `${addZero(minutes)}:${addZero(seconds)}`;
+
   timer.innerText = result.toString();
+
+  // When Timer Runs Out
+  if (seconds <= 0 && minutes <= 0 && hours <= 0) {
+    clearInterval(countdownTimer);
+    alarm.play();
+    timer.innerText = 'DONE';
+    pauseTimer.style.display = 'none';
+    timerValue.value = '';
+  }
 };
 
+// Stop Button
 const stopClock = () => {
-  // 1) reset the timer we set
   clearInterval(countdownTimer);
-  // 2) update our variable to know that the timer is stopped
   activeTimer = false;
-  // reset the time left in the session to its original state
-  timeLeft = setTime;
-  // update the timer displayed
-  displayTime();
+  timerValue.value = '';
+  timer.innerText = '';
+  startTimer.style.display = 'inline';
 };

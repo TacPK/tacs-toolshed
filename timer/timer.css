@@ -13,6 +13,7 @@
   font-weight: bold;
 }
 
-.stop {
+.stop,
+.pause {
   display: none;
 }
