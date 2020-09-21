@@ -84,7 +84,7 @@ const displayTime = () => {
   if (seconds <= 0 && minutes <= 0 && hours <= 0) {
     clearInterval(countdownTimer);
     alarm.play();
-    timer.innerText = 'DONE';
+    timer.innerText = 'DONE!';
     pauseTimer.style.display = 'none';
     timerValue.value = '';
   }

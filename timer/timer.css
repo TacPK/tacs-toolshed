@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* Back Button */
 .back {
   display: flex;
@@ -13,7 +17,47 @@
   font-weight: bold;
 }
 
+/* Body */
+
+body,
+input,
+button {
+  background-color: rgb(175, 223, 241);
+}
+
+/* Timer */
+
+.container {
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 100px;
+}
+
+.border {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 50px 50px;
+  border-radius: 5em;
+}
+
+button {
+  outline-style: none;
+}
+
+.start {
+  border-radius: 2em;
+}
+
 .stop,
 .pause {
   display: none;
+  border-radius: 2em;
+}
+
+.timer {
+  position: relative;
+  font-weight: bold;
+  font-size: 32px;
+  margin-top: 20px;
 }

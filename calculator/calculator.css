@@ -4,6 +4,7 @@
 
 body {
   overflow: hidden;
+  background-color: rgb(162, 255, 182);
 }
 
 /* Back Button */
@@ -40,6 +41,7 @@ body {
   border: 5px solid #000;
   border-radius: 10px;
   padding: 5px;
+  background-color: #fff;
 }
 
 button {

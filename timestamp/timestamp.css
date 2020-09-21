@@ -17,6 +17,12 @@
   font-weight: bold;
 }
 
+/* Body */
+
+body {
+  background-color: rgb(255, 220, 123);
+}
+
 /* Calendar */
 .container {
   display: flex;
